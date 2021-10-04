@@ -13,7 +13,7 @@ import Users from './pages/Users';
 ReactDOM.render(
   <BrowserRouter>
     <Header />
-    <main>
+    <main className="main">
       <Switch>
         <Route path="/tests" component={Tests} />
         <Route path="/events" component={Events} />
