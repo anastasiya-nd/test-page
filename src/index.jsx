@@ -14,12 +14,12 @@ ReactDOM.render(
     <Header />
     <main>
       <Switch>
-        <Route path="/courses" component={Courses} />
         <Route path="/tests" component={Tests} />
         <Route path="/events" component={Events} />
         <Route path="/knowledge-base" component={KnowledgeBase} />
         <Route path="/users" component={Users} />
         <Route path="/reports" component={Reports} />
+        <Route path="/" component={Courses} />
       </Switch>
     </main>
   </BrowserRouter>,
