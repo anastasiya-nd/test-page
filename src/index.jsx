@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.sass';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Courses from './pages/Courses';
