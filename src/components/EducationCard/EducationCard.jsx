@@ -63,12 +63,11 @@ EducationCard.propTypes = {
   date: PropTypes.string.isRequired,
   progress: PropTypes.number,
   type: PropTypes.string.isRequired,
-  image: PropTypes.string,
+  image: PropTypes.string.isRequired,
 };
 
 EducationCard.defaultProps = {
   progress: null,
-  image: '',
 };
 
 export default EducationCard;

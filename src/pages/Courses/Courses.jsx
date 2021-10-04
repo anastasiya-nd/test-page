@@ -1,5 +1,6 @@
 import React from 'react';
-import EducationCard from '../../components/StudyCard/EducationCard';
+import NewsCard from '../../components/NewsCard';
+import EducationCard from '../../components/EducationCard/EducationCard';
 import s from './Courses.module.sass';
 
 const Courses = () => {
@@ -69,17 +70,62 @@ const Courses = () => {
         'https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1776&q=80',
     },
   ];
+  const news = [
+    {
+      name: 'Хакеры атаковали пользователей Facebook',
+      description:
+        'Эксперты Group-IB предупредили Facebook о масштабной хакерской атаке на пользователей соцсети в 84 странах.',
+      likes: 24,
+      comments: 2,
+      tags: ['В мире IT', 'Facebook'],
+      image:
+        'https://images.unsplash.com/photo-1508013861974-9f6347163ebe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1752&q=80',
+    },
+    {
+      name: 'Данные сотен российских компаний из Trello',
+      description:
+        'Эксперты по безопасности Infosecurity a Softline company нашли в интернете тысячи досок Trello с корпоративными данными...',
+      likes: 32,
+      comments: 10,
+      tags: ['В мире IT', 'Trello'],
+      image:
+        'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80',
+    },
+    {
+      name: 'Топ-25 самых востребованных профессий',
+      description:
+        'Dice Insights снова обратился к данным компании Burning Glass, которая анализирует рынок труда США, чтобы узнать...',
+      likes: 10,
+      comments: 7,
+      tags: ['В мире IT', 'Profession', 'Top'],
+      image:
+        'https://images.unsplash.com/photo-1503437313881-503a91226402?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80',
+    },
+  ];
 
   return (
     <section>
       <div className={s.education_wrap}>
         {education.map((card, index) => (
           <EducationCard
-          key={index} //eslint-disable-line
+            key={index} //eslint-disable-line
             name={card.name}
             date={card.date}
             progress={card.progress}
             type={card.type}
+            image={card.image}
+          />
+        ))}
+      </div>
+      <div className={s.news_wrap}>
+        {news.map((card, index) => (
+          <NewsCard
+          key={index} //eslint-disable-line
+            name={card.name}
+            description={card.description}
+            likes={card.likes}
+            comments={card.comments}
+            tags={card.tags}
             image={card.image}
           />
         ))}
