@@ -9,6 +9,7 @@ import KnowledgeBase from './pages/KnowledgeBase';
 import Reports from './pages/Reports';
 import Tests from './pages/Tests';
 import Users from './pages/Users';
+import Footer from './components/Footer';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -23,6 +24,7 @@ ReactDOM.render(
         <Route path="/" component={Courses} />
       </Switch>
     </main>
+    <Footer />
   </BrowserRouter>,
   document.getElementById('root')
 );

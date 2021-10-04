@@ -104,33 +104,40 @@ const Courses = () => {
   ];
 
   return (
-    <section>
-      <div className={s.education_wrap}>
-        {education.map((card, index) => (
-          <EducationCard
+    <>
+      <section>
+        <h2>Назначенное обучение</h2>
+        <div className={s.education_wrap}>
+          {education.map((card, index) => (
+            <EducationCard
             key={index} //eslint-disable-line
-            name={card.name}
-            date={card.date}
-            progress={card.progress}
-            type={card.type}
-            image={card.image}
-          />
-        ))}
-      </div>
-      <div className={s.news_wrap}>
-        {news.map((card, index) => (
-          <NewsCard
+              name={card.name}
+              date={card.date}
+              progress={card.progress}
+              type={card.type}
+              image={card.image}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2>Новости</h2>
+        <div className={s.news_wrap}>
+          {news.map((card, index) => (
+            <NewsCard
           key={index} //eslint-disable-line
-            name={card.name}
-            description={card.description}
-            likes={card.likes}
-            comments={card.comments}
-            tags={card.tags}
-            image={card.image}
-          />
-        ))}
-      </div>
-    </section>
+              name={card.name}
+              description={card.description}
+              likes={card.likes}
+              comments={card.comments}
+              tags={card.tags}
+              image={card.image}
+            />
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 
