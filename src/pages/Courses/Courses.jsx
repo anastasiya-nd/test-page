@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NewsCard from '../../components/NewsCard';
-import EducationCard from '../../components/EducationCard/EducationCard';
+import EducationCard from '../../components/EducationCard';
+import Filter from '../../components/Filter';
 import s from './Courses.module.sass';
 
 const Courses = () => {
@@ -103,21 +104,41 @@ const Courses = () => {
     },
   ];
 
+  const getNumberCards = (cards, type) => {
+    return cards.filter((item) => type === 'all' || item.type === type).length;
+  };
+
+  const filters = [
+    { type: 'all', label: 'Все', count: getNumberCards(education, 'all') },
+    { type: 'course', label: 'Курсы', count: getNumberCards(education, 'course') },
+    { type: 'test', label: 'Тесты', count: getNumberCards(education, 'test') },
+    { type: 'event', label: 'События', count: getNumberCards(education, 'event') },
+  ];
+
+  const [activeFilter, setFilter] = useState(filters[0]);
+
+  const handleFilterChange = (filter) => {
+    setFilter(filter);
+  };
+
   return (
     <>
       <section>
         <h2>Назначенное обучение</h2>
+        <Filter filters={filters} active={activeFilter} onChange={handleFilterChange} />
         <div className={s.education_wrap}>
-          {education.map((card, index) => (
-            <EducationCard
-            key={index} //eslint-disable-line
-              name={card.name}
-              date={card.date}
-              progress={card.progress}
-              type={card.type}
-              image={card.image}
-            />
-          ))}
+          {education
+            .filter((card) => activeFilter.type === 'all' || card.type === activeFilter.type)
+            .map((card, index) => (
+              <EducationCard
+                key={index} //eslint-disable-line
+                name={card.name}
+                date={card.date}
+                progress={card.progress}
+                type={card.type}
+                image={card.image}
+              />
+            ))}
         </div>
       </section>
 
@@ -126,7 +147,7 @@ const Courses = () => {
         <div className={s.news_wrap}>
           {news.map((card, index) => (
             <NewsCard
-          key={index} //eslint-disable-line
+              key={index} //eslint-disable-line
               name={card.name}
               description={card.description}
               likes={card.likes}

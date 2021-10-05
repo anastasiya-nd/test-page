@@ -5,7 +5,6 @@ import Like from '../Icons/Like';
 import Comments from '../Icons/Comments'; //eslint-disable-line
 
 const NewsCard = ({ name, description, likes, comments, tags, image }) => { //eslint-disable-line
-  console.log(likes);
   return (
     <div className={s.card_wrap}>
       <div className={s.img_wrap}>
