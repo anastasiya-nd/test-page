@@ -1,12 +1,26 @@
 section
   padding: 40px 0
 
+.filter_wrap
+  margin-top: 16px
 .education_wrap
   display: grid
   grid-template-columns: repeat(4, 1fr)
   grid-gap: 24px
+  @media (max-width: 1280px)
+    grid-template-columns: repeat(3, 1fr)
+  @media (max-width: 1024px)
+    grid-template-columns: repeat(2, 1fr)
+  @media (max-width: 727px)
+    grid-template-columns: repeat(1, 1fr)
 
 .news_wrap
   display: grid
   grid-template-columns: repeat(3, 1fr)
   grid-gap: 24px
+  margin-top: 32px
+  @media (max-width: 1280px)
+    grid-template-columns: repeat(2, 1fr)
+  @media (max-width: 727px)
+    grid-template-columns: repeat(1, 1fr)
+

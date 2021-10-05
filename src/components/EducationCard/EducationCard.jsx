@@ -1,10 +1,9 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Calendar from '../Icons/Calendar';
 import s from './EducationCard.module.sass';
 
-const EducationCard = (props) => { //eslint-disable-line
-  const { name, date, progress, type, image } = props; //eslint-disable-line
+const EducationCard = ({ name, date, progress, type, image }) => {
   const getCardTypeName = (typeName) => {
     switch (typeName) {
       case 'course':
@@ -49,7 +48,6 @@ const EducationCard = (props) => { //eslint-disable-line
           </div>
           <h3 className={s.card_title}>{name}</h3>
         </div>
-
         <div className={s.date_wrap}>
           <Calendar />
           <span>Доступен до: {date}</span>
@@ -59,16 +57,16 @@ const EducationCard = (props) => { //eslint-disable-line
   );
 };
 
-// EducationCard.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   date: PropTypes.string.isRequired,
-//   progress: PropTypes.number,
-//   type: PropTypes.string.isRequired,
-//   image: PropTypes.string.isRequired,
-// };
+EducationCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  progress: PropTypes.number,
+  type: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+};
 
-// EducationCard.defaultProps = {
-//   progress: null,
-// };
+EducationCard.defaultProps = {
+  progress: null,
+};
 
 export default EducationCard;

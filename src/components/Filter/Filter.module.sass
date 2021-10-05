@@ -1,9 +1,14 @@
 .button_wrap
   display: flex
+  flex-wrap: wrap
   margin-bottom: 24px
+  @media (max-width: 727px)
+    margin-bottom: 16px
 
 .button
   color: red
+  font-family: 'Roboto'
+  font-weight: 400
   font-size: 18px
   line-height: 21px
   letter-spacing: 0.0025em
@@ -14,6 +19,10 @@
   display: flex
   align-items: center
   margin-right: 8px
+  @media (max-width: 727px)
+    margin-bottom: 8px
+    font-size: 16px
+    line-height: 18px
   span
     margin-left: 8px
     padding: 0px 3px

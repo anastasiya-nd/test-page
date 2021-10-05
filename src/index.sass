@@ -29,8 +29,17 @@
   padding: 0
   font-family: 'Inter'
   font-weight: 400
+  box-sizing: border-box
+
+body>div
+  min-height: 100vh
+  overflow: hidden
 
 .main
   max-width: 1440px
+  width: 100%
   margin: 0 auto
-  padding: 0 24px
+  padding: 40px 24px 124px
+  @media (max-width: 727px)
+    padding: 0 16px
+

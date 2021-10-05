@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './NewsCard.module.sass';
 import Like from '../Icons/Like';
-import Comments from '../Icons/Comments'; //eslint-disable-line
+import Comments from '../Icons/Comments';
 
-const NewsCard = ({ name, description, likes, comments, tags, image }) => { //eslint-disable-line
+const NewsCard = ({ name, description, likes, comments, tags, image }) => {
   return (
     <div className={s.card_wrap}>
       <div className={s.img_wrap}>
@@ -18,8 +18,10 @@ const NewsCard = ({ name, description, likes, comments, tags, image }) => { //es
         </div>
       )}
       <div className={s.card_content}>
-        <h3 className={s.card_title}>{name}</h3>
-        <p className={s.card_description}>{description}</p>
+        <div>
+          <h3 className={s.card_title}>{name}</h3>
+          <p className={s.card_description}>{description}</p>
+        </div>
         <div className={s.card_statistics}>
           <div>
             <Like />

@@ -125,26 +125,28 @@ const Courses = () => {
   return (
     <>
       <section>
-        <Title title="Назначенное обучение" marginBottom="16px" />
-        <Filter filters={filters} active={activeFilter} onChange={handleFilterChange} />
-        <div className={s.education_wrap}>
-          {education
-            .filter((card) => activeFilter.type === 'all' || card.type === activeFilter.type)
-            .map((card, index) => (
-              <EducationCard
+        <Title title="Назначенное обучение" />
+        <div className={s.filter_wrap}>
+          <Filter filters={filters} active={activeFilter} onChange={handleFilterChange} />
+          <div className={s.education_wrap}>
+            {education
+              .filter((card) => activeFilter.type === 'all' || card.type === activeFilter.type)
+              .map((card, index) => (
+                <EducationCard
                 key={index} //eslint-disable-line
-                name={card.name}
-                date={card.date}
-                progress={card.progress}
-                type={card.type}
-                image={card.image}
-              />
-            ))}
+                  name={card.name}
+                  date={card.date}
+                  progress={card.progress}
+                  type={card.type}
+                  image={card.image}
+                />
+              ))}
+          </div>
         </div>
       </section>
 
       <section>
-        <Title title="Новости" marginBottom="32px" />
+        <Title title="Новости" />
         <div className={s.news_wrap}>
           {news.map((card, index) => (
             <NewsCard

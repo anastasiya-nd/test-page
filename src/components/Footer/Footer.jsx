@@ -3,12 +3,12 @@ import s from './Footer.module.sass';
 import Logo from '../Icons/Logo';
 
 const Footer = () => (
-  <header className={s.footer}>
+  <footer className={s.footer}>
     <Logo />
     <button type="button" className={s.button}>
       Нужна помощь?
     </button>
-  </header>
+  </footer>
 );
 
 export default Footer;
