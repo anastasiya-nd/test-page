@@ -3,6 +3,7 @@ import NewsCard from '../../components/NewsCard';
 import EducationCard from '../../components/EducationCard';
 import Filter from '../../components/Filter';
 import s from './Courses.module.sass';
+import Title from '../../components/Title';
 
 const Courses = () => {
   const education = [
@@ -124,7 +125,7 @@ const Courses = () => {
   return (
     <>
       <section>
-        <h2>Назначенное обучение</h2>
+        <Title title="Назначенное обучение" marginBottom="16px" />
         <Filter filters={filters} active={activeFilter} onChange={handleFilterChange} />
         <div className={s.education_wrap}>
           {education
@@ -143,7 +144,7 @@ const Courses = () => {
       </section>
 
       <section>
-        <h2>Новости</h2>
+        <Title title="Новости" marginBottom="32px" />
         <div className={s.news_wrap}>
           {news.map((card, index) => (
             <NewsCard
